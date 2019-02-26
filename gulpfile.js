@@ -64,12 +64,7 @@ function scripts(done){
     done();
 };
 
-// Default
-
-
-
 // Watch
-
 function watch_files() {
   gulp.watch('./src/js/*.js', scripts)
   gulp.watch('./src/images/*', imageMin)
@@ -77,6 +72,7 @@ function watch_files() {
   gulp.watch('./src/*.html', copyhtml)
 }
 
+// Tasks
 gulp.task('message', message);
 gulp.task('copyhtml', copyhtml);
 gulp.task('imageMin', imageMin);
@@ -85,4 +81,5 @@ gulp.task('gulp_Sass', gulp_Sass);
 gulp.task('scripts', scripts);
 gulp.task('watch', watch_files);
 
+// Default
 gulp.task('default', gulp.parallel(message, copyhtml, gulp_Sass, imageMin, scripts));
